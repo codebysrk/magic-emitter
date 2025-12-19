@@ -35,7 +35,7 @@ const btn = document.querySelector(".btn");
 const getRandom = (max, min = 0) =>
   Math.floor(Math.random() * (max - min + 1) + min);
 
-const addName = (e) => {
+const addEmoji = (e) => {
   const el = document.createElement("div");
   el.className = "emoji-item";
 
@@ -50,7 +50,7 @@ const addName = (e) => {
 
   el.style.left = `${x}%`;
   el.style.top = `${y}%`;
-  el.style.fontSize = `${getRandom(2, 4)}rem`;
+  el.style.fontSize = `${getRandom(40, 20) / 10}rem`;
 
   el.style.setProperty("--final-scale", scale);
   el.style.setProperty("--final-rotation", `${rotation}deg`);
@@ -63,6 +63,6 @@ const addName = (e) => {
   main.appendChild(el);
 };
 
-btn.addEventListener("click", addName);
+btn.addEventListener("click", addEmoji);
 
-setTimeout(addName, 500);
+setTimeout(addEmoji, 500);
